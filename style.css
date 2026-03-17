@@ -346,26 +346,51 @@ footer {
     color: white;
 }
 
+/* --- Desain Magang Badge Terintegrasi CERIA --- */
+.magang-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    padding: 8px 16px;
+    border: 1px dashed var(--ceria-blue); /* Menggunakan warna biru logo */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    background: #f8fbff;
+}
+
+.magang-badge i {
+    color: var(--ceria-orange); /* Aksen warna oranye logo untuk ikon */
+    font-size: 0.9rem;
+}
+
+.magang-badge:hover {
+    color: var(--ceria-blue);
+    border-color: var(--ceria-green); /* Berubah ke hijau saat hover */
+    background: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 113, 188, 0.1);
+    border-style: solid;
+}
+
+/* Penyesuaian Footer agar rapi */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+}
+
 .main-copyright {
     color: var(--text-light);
     font-size: 0.75rem;
     line-height: 1.5;
-    margin-top: 15px;
-}
-.magang-badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    color: #a0aec0;
-    padding: 5px 12px;
-    border: 1px dashed #e2e8f0;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.magang-badge:hover {
-    color: var(--secondary-blue);
-    border-color: var(--secondary-blue);
-    background: #f8fbff;
 }
 /* Keyframes */
 @keyframes blink { 0% {opacity: 1;} 50% {opacity: 0.3;} 100% {opacity: 1;} }
@@ -391,16 +416,5 @@ footer {
 @media (max-width: 480px) {
     body {
         padding-top: 60px;
-    }
-}
-
-@media (max-width: 400px) {
-    .web-link {
-        font-size: 0.75rem;
-        padding: 6px 12px;
-    }
-    
-    .magang-badge {
-        font-size: 0.65rem;
     }
 }
