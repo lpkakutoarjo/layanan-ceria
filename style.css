@@ -325,6 +325,11 @@ footer {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #edf2f7;
+    display: block; /* Mengembalikan ke block agar tidak dipaksa melebar oleh flex */
+}
+
+.footer-links {
+    margin-bottom: 12px;
 }
 
 .footer-btn {
@@ -346,51 +351,52 @@ footer {
     color: white;
 }
 
-/* --- Desain Magang Badge Terintegrasi CERIA --- */
-.magang-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.75rem;
+.main-copyright {
     color: var(--text-light);
-    padding: 8px 16px;
-    border: 1px dashed var(--ceria-blue); /* Menggunakan warna biru logo */
-    border-radius: 10px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.magang-badge {
+    display: inline-flex; /* Agar kotak hanya selebar kontennya saja */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.7rem; /* Ukuran teks lebih kecil agar proporsional */
+    color: var(--text-light);
+    padding: 6px 14px;
+    border: 1px dashed var(--ceria-blue);
+    border-radius: 8px;
     transition: all 0.3s ease;
-    margin-top: 15px;
     background: #f8fbff;
+    margin: 0 auto; /* Menjaga posisi di tengah */
 }
 
 .magang-badge i {
-    color: var(--ceria-orange); /* Aksen warna oranye logo untuk ikon */
-    font-size: 0.9rem;
+    color: var(--ceria-orange);
+    font-size: 0.85rem;
 }
 
 .magang-badge:hover {
     color: var(--ceria-blue);
-    border-color: var(--ceria-green); /* Berubah ke hijau saat hover */
+    border-color: var(--ceria-green);
     background: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 113, 188, 0.1);
     border-style: solid;
 }
 
-/* Penyesuaian Footer agar rapi */
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #edf2f7;
-}
-
-.main-copyright {
-    color: var(--text-light);
-    font-size: 0.75rem;
-    line-height: 1.5;
+/* --- Perbaikan Responsif --- */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    .magang-badge {
+        font-size: 0.65rem;
+        padding: 5px 10px;
+        max-width: 90%; /* Mencegah badge terlalu mepet pinggir pada layar HP */
+    }
 }
 /* Keyframes */
 @keyframes blink { 0% {opacity: 1;} 50% {opacity: 0.3;} 100% {opacity: 1;} }
@@ -406,15 +412,3 @@ footer {
 .fade-in { animation: fadeIn 0.8s ease; }
 .slide-up { animation: slideUp 0.5s ease forwards; opacity: 0; }
 
-/* Optimasi Responsif */
-@media (max-width: 480px) {
-    .container { padding: 20px; }
-    .title { font-size: 26px; }
-    #resLink { font-size: 1rem; padding: 12px 20px; }
-}
-/* --- Optimasi Responsif --- */
-@media (max-width: 480px) {
-    body {
-        padding-top: 60px;
-    }
-}
