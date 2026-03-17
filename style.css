@@ -1,0 +1,375 @@
+:root {
+    /* Palet Warna Utama Logo CERIA */
+    --ceria-red: #E62129;
+    --ceria-orange: #F58220;
+    --ceria-green: #39B54A;
+    --ceria-blue: #0071BC;
+    --ceria-yellow: #FFF200;
+
+    /* Variabel UI Terintegrasi */
+    --primary-blue: #0A4275;
+    --secondary-blue: #166BB5;
+    --accent-blue: #E1F0FF;
+    --success: #28a745;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    --white: #ffffff;
+    --bg-color: #f0f4f8;
+    
+    /* Gradasi Latar Belakang sesuai Logo CERIA */
+    --bg-gradient: linear-gradient(135deg, #0071BC 0%, #39B54A 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    background-image: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-dark);
+}
+
+.background-shape {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Kotak Utama */
+.container {
+    background: var(--white);
+    max-width: 480px;
+    width: 100%;
+    border-radius: 25px; /* Sedikit lebih melengkung agar modern */
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Logo Interaktif */
+.logo-container {
+    width: 110px; 
+    height: 110px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px auto;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    animation: floatLogo 3s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.logo-img:hover {
+    transform: scale(1.1) rotate(3deg);
+    animation-play-state: paused;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--ceria-red);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.service {
+    font-size: 14px;
+    color: var(--ceria-green);
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+#status-bar {
+    display: inline-flex;
+    align-items: center;
+    background: #f0fdf4;
+    color: var(--ceria-green);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 15px;
+    border: 1px solid #dcfce7;
+}
+
+.dot {
+    height: 8px; width: 8px;
+    background-color: var(--ceria-green);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: blink 1.5s infinite;
+}
+
+#clock {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Pencarian */
+.search-box {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ceria-blue);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ceria-blue);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--ceria-orange);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(245, 130, 32, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#btnSearch {
+    background: linear-gradient(to right, var(--ceria-red), var(--ceria-orange));
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(230, 33, 41, 0.3);
+}
+
+#btnSearch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 33, 41, 0.4);
+}
+
+#btnRefresh {
+    background: #f1f3f5;
+    color: var(--text-dark);
+}
+
+button:active { transform: translateY(0); }
+
+/* Hasil & Card */
+.card {
+    background: var(--white);
+    border-radius: 15px;
+    margin-top: 15px;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    overflow: hidden;
+}
+
+.card-header {
+    background: #f8fafc;
+    border-bottom: 2px solid var(--ceria-yellow);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ceria-blue);
+}
+
+.card-header h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #edf2f7;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-label { color: var(--text-light); font-size: 0.9rem; }
+.info-value { color: var(--text-dark); font-size: 0.9rem; text-align: right; }
+.font-bold { font-weight: 600; }
+.text-center { text-align: center; }
+
+/* Tautan Berkas (Mix Custom Style) */
+#linkContainer {
+    margin: 15px 0;
+}
+
+#resLink {
+    background: var(--ceria-blue);
+    color: var(--white);
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+#resLink:hover {
+    background: var(--ceria-green);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(57, 181, 74, 0.3);
+}
+
+.desc-text {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+/* Utilities & Animations */
+.hidden { display: none !important; }
+
+#loading {
+    text-align: center;
+    margin: 30px 0;
+    color: var(--ceria-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.spinner {
+    width: 40px; height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--ceria-red);
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    animation: spin 1s linear infinite;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+}
+
+.footer-btn {
+    background: #f1f5f9;
+    color: var(--ceria-blue);
+    padding: 8px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.footer-btn:hover {
+    background: var(--ceria-blue);
+    color: white;
+}
+
+.main-copyright {
+    color: var(--text-light);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+/* Keyframes */
+@keyframes blink { 0% {opacity: 1;} 50% {opacity: 0.3;} 100% {opacity: 1;} }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes floatLogo {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.fade-in { animation: fadeIn 0.8s ease; }
+.slide-up { animation: slideUp 0.5s ease forwards; opacity: 0; }
+
+/* Optimasi Responsif */
+@media (max-width: 480px) {
+    .container { padding: 20px; }
+    .title { font-size: 26px; }
+    #resLink { font-size: 1rem; padding: 12px 20px; }
+}
