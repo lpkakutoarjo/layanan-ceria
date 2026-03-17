@@ -352,7 +352,21 @@ footer {
     line-height: 1.5;
     margin-top: 15px;
 }
+.magang-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: #a0aec0;
+    padding: 5px 12px;
+    border: 1px dashed #e2e8f0;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
 
+.magang-badge:hover {
+    color: var(--secondary-blue);
+    border-color: var(--secondary-blue);
+    background: #f8fbff;
+}
 /* Keyframes */
 @keyframes blink { 0% {opacity: 1;} 50% {opacity: 0.3;} 100% {opacity: 1;} }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -372,4 +386,21 @@ footer {
     .container { padding: 20px; }
     .title { font-size: 26px; }
     #resLink { font-size: 1rem; padding: 12px 20px; }
+}
+/* --- Optimasi Responsif --- */
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .web-link {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+    
+    .magang-badge {
+        font-size: 0.65rem;
+    }
 }
